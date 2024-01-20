@@ -44,7 +44,7 @@
                <th>Subtotal</th>
            </tr>
         
-           <tr class="abc">
+           <tr class="abc" id="1">
                <td>
                    <div class="cart-info">
                        <img src="New Folder/buy-1.jpg" >
@@ -52,7 +52,7 @@
                            <p>Red Printed T-Shirt</p>
                            <small class="price">Price: $50.00</small>
                            <br>
-                           <button type="button" class="btn">Remove</button>
+                           <button type="button" class="btn" onclick="selectID(this.parentNode.parentNode.parentNode.parentNode)">Remove</button>
                        </div>
                    </div>
                </td>
@@ -60,7 +60,7 @@
                <td id="total">$50.00</td>
            </tr>
 
-           <tr  class="abc">
+           <tr  class="abc" id="2">
             <td>
                 <div class="cart-info">
                     <img src="New Folder/buy-2.jpg" >
@@ -68,14 +68,14 @@
                         <p>Rred Printed T-Shirt</p>
                         <small>Price: $75.00</small>
                         <br>
-                       <button type="button" class="btn">Remove</button>
+                       <button type="button" class="btn" onclick="selectID(this.parentNode.parentNode.parentNode.parentNode)">Remove</button>
                     </div>
                 </div>
             </td>
             <td><input type="number" value="1"></td>
             <td>$75.00</td>
         </tr>
-        <tr class="abc">
+        <tr class="abc" id="3">
             <td>
                 <div class="cart-info">
                     <img src="New Folder/buy-3.jpg" >
@@ -83,7 +83,7 @@
                         <p>Rred Printed T-Shirt</p>
                         <small >Price: $75.00</small>
                         <br>
-                        <button type="button" class="btn">Remove</button>
+                        <button type="button" class="btn" onclick="selectID(this.parentNode.parentNode.parentNode.parentNode)">Remove</button>
                     </div>
                 </div>
             </td>
@@ -171,15 +171,32 @@
         }
     }
 
-    var removeButtons=document.getElementsByClassName("btn");
-    //console.log(removeButtons);
-    for(var i=0;i<removeButtons.length;i++){
-        var buttons=removeButtons[i];
-        buttons.addEventListener("click",function(event){
-           
-            document.querySelector(".abc").remove();
-        })
+    var removeButtons = document.getElementsByClassName("btn");
+    // var first = document.getElementById("1");
+    // first.addEventListener("click",() => {
+    //     first.remove();
+    // });
+
+    // var second = document.getElementById("2");
+    // second.addEventListener("click",() => {
+    //     second.remove();
+    // });
+
+    // var third = document.getElementById("3");
+    // third.addEventListener("click",() => {
+    //     third.remove();
+    // });
+
+    // for(var i=0;i<removeButtons.length;i++){
+    //     var btnremove = document.getElementById("${id}")
+    // }
+
+
+    function selectID(element){
+        //var x = document.getElementById(`${id}`)
+        element.remove();
     }
+        
 
 </script>
 
